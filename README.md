@@ -7,6 +7,13 @@
   <h1 style="font-size:48px;color:#38bdf8;margin-bottom:10px;">
     🚀 InternHub AI
   </h1>
+  <p>
+  🌐 <strong>Live Application:</strong>
+  <a href="https://intern-hub-ai.vercel.app/" target="_blank">
+    https://intern-hub-ai.vercel.app/
+  </a>
+</p>
+
 
   <h3 style="font-weight:400;color:#e5e7eb;margin-top:0;">
     Smart Internship Match Analyzer
