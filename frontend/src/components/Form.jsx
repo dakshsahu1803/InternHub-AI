@@ -12,7 +12,13 @@ export default function Form({ setResult }) {
 
   const analyze = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/analyze", {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
+      if (!backendUrl) {
+        throw new Error("Backend URL not configured");
+      }
+
+      const response = await fetch(`${backendUrl}/analyze`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -21,16 +27,22 @@ export default function Form({ setResult }) {
           student: {
             skills: skills.split(",").map((s) => s.trim()),
             interests: interests.split(",").map((i) => i.trim()),
-            education: education,
+            education,
             experience_level: experience,
           },
           internship: {
-            role: role,
-            required_skills: requiredSkills.split(",").map((s) => s.trim()),
-            description: description,
+            role,
+            required_skills: requiredSkills
+              .split(",")
+              .map((s) => s.trim()),
+            description,
           },
         }),
       });
+
+      if (!response.ok) {
+        throw new Error("Backend request failed");
+      }
 
       const data = await response.json();
       setResult(data);
