@@ -147,9 +147,10 @@ and the internship requirements.
   Vercel
 </td>
 <td align="center">
-  <img src="https://render.com/static/favicon-96x96.png" width="50"/><br/>
+  <img src="https://avatars.githubusercontent.com/u/44494890?s=200&v=4" width="50"/><br/>
   Render
 </td>
+
 <td></td>
 </tr>
 </table>
